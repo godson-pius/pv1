@@ -7,7 +7,7 @@ export default function About() {
     return (
         <main className='bg-white w-full h-[36rem] rounded-3xl mt-2 p-14 overflow-hidden hover:overflow-y-scroll hover:shadow-lg duration-700'>
             <h1 className={`capitalize font-bold text-4xl flex items-center gap-3 ${luckiest.className}`}>About Me <span className="text-6xl"></span></h1>
-            <p className="mt-4">Hello there! I'm thrilled to welcome you to my portfolio. I am a passionate and versatile mern-stack developer with a keen interest in exploring the latest cutting-edge technologies. My journey in the world of development has been nothing short of exhilarating, and I constantly strive to enhance my skills and embrace emerging trends in the industry.</p>
+            <p className="mt-4">Hello there! I&apos;m thrilled to welcome you to my portfolio. I am a passionate and versatile mern-stack developer with a keen interest in exploring the latest cutting-edge technologies. My journey in the world of development has been nothing short of exhilarating, and I constantly strive to enhance my skills and embrace emerging trends in the industry.</p>
 
             <hr className="my-6 mx-20" />
 
@@ -20,7 +20,7 @@ export default function About() {
                         <h6 className="font-bold text-2xl">Web Development</h6>
                     </div>
 
-                    <p className="text-sm">As a developer, I find myself most captivated by the power and flexibility of NEXT.js. I'm always eager to dive into new projects that leverage NEXT.js and discover innovative ways to create fast, scalable, and user-friendly applications.</p>
+                    <p className="text-sm">As a developer, I find myself most captivated by the power and flexibility of NEXT.js. I&apos;m always eager to dive into new projects that leverage NEXT.js and discover innovative ways to create fast, scalable, and user-friendly applications.</p>
                 </div>
 
                 <div className="bg-[#F2F7FC] p-5 rounded-xl">
@@ -29,7 +29,7 @@ export default function About() {
                         <h6 className="font-bold text-2xl">App Development</h6>
                     </div>
 
-                    <p className="text-sm">With a focus on user-centric design and cutting-edge technologies, I thrive on building intuitive and efficient apps that make a positive impact on people's lives. Let's turn ideas into reality and shape the future together.</p>
+                    <p className="text-sm">With a focus on user-centric design and cutting-edge technologies, I thrive on building intuitive and efficient apps that make a positive impact on people&apos;s lives. Let&apos;s turn ideas into reality and shape the future together.</p>
                 </div>
 
                 <div className="bg-[#F2F7FC] p-5 rounded-xl">
@@ -38,7 +38,7 @@ export default function About() {
                         <h6 className="font-bold text-2xl">Blockchain Development</h6>
                     </div>
 
-                    <p className="text-sm">As a developer, I find myself most captivated by the power and flexibility of NEXT.js. I'm always eager to dive into new projects that leverage NEXT.js and discover innovative ways to create fast, scalable, and user-friendly applications.</p>
+                    <p className="text-sm">As a developer, I find myself most captivated by the power and flexibility of NEXT.js. I&apos;m always eager to dive into new projects that leverage NEXT.js and discover innovative ways to create fast, scalable, and user-friendly applications.</p>
                 </div>
 
                 <div className="bg-[#FFEBD1] p-5 rounded-xl">
