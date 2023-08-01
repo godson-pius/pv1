@@ -1,4 +1,5 @@
 import { Luckiest_Guy, Pacifico } from 'next/font/google'
+import { FiDroplet } from 'react-icons/fi'
 const luckiest = Luckiest_Guy({ subsets: ['latin'], weight: ['400'] })
 const pacifico = Pacifico({ subsets: ['latin'], weight: ['400'] })
 
@@ -15,7 +16,7 @@ export default function About() {
             <div className="grid grid-cols-2 gap-7">
                 <div className="bg-[#FFEBD1] p-5 rounded-xl">
                     <div className="top mb-1">
-                        <p>///</p>
+                        <FiDroplet />
                         <h6 className="font-bold text-2xl">Web Development</h6>
                     </div>
 
@@ -24,7 +25,7 @@ export default function About() {
 
                 <div className="bg-[#F2F7FC] p-5 rounded-xl">
                     <div className="top mb-1">
-                        <p>///</p>
+                        <FiDroplet />
                         <h6 className="font-bold text-2xl">App Development</h6>
                     </div>
 
@@ -33,7 +34,7 @@ export default function About() {
 
                 <div className="bg-[#F2F7FC] p-5 rounded-xl">
                     <div className="top mb-1">
-                        <p>///</p>
+                        <FiDroplet />
                         <h6 className="font-bold text-2xl">Blockchain Development</h6>
                     </div>
 
@@ -42,7 +43,7 @@ export default function About() {
 
                 <div className="bg-[#FFEBD1] p-5 rounded-xl">
                     <div className="top mb-1">
-                        <p>///</p>
+                        <FiDroplet />
                         <h6 className="font-bold text-2xl">Mentorship</h6>
                     </div>
 
