@@ -1,8 +1,9 @@
+import Navbar from '@/components/Navbar'
 import './globals.css'
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Raleway, Rubik } from 'next/font/google'
 
-const inter = Inter({ subsets: ['latin'] })
+const raleway = Raleway({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Godson Azubuike',
@@ -16,7 +17,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={`${raleway.className} px-20 pt-7 h-screen bg-[#F2F5F9] dark:bg-[#1d232a]`}>
+        <Navbar />
+        {children}
+      </body>
     </html>
   )
 }
