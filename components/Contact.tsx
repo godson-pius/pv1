@@ -10,7 +10,7 @@ const luckiest = Luckiest_Guy({ subsets: ['latin'], weight: ['400'] })
 
 const Contact = () => {
     const form = useRef<any>();
-    const [alertState, setAlertState] = useState<boolean>(true)
+    const [alertState, setAlertState] = useState<boolean>(false)
 
     const sendEmail: FormEventHandler<HTMLFormElement> = (e) => {
         e.preventDefault();
