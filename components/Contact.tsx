@@ -26,7 +26,7 @@ const Contact = () => {
     }
 
     return (
-        <main className='bg-white w-full h-[36rem] rounded-3xl mt-2 p-14 hover:overflow-y-scroll overflow-hidden hover:shadow-lg duration-700'>
+        <main className='bg-white w-full h-[36rem] rounded-3xl mt-2 p-14 overflow-hidden hover:shadow-lg duration-700'>
 
             { alertState && <Alert message='Message sent successfully' alertState={alertState} setAlertState={setAlertState} /> }
 
