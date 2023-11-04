@@ -5,7 +5,7 @@ const pacifico = Pacifico({ subsets: ['latin'], weight: ['400'] })
 
 export default function Resume() {
     return (
-        <main className='bg-white dark:bg-slate-700 w-full h-[36rem] rounded-3xl mt-2 p-7 md:p-14 overflow-hidden hover:overflow-y-scroll hover:shadow-lg duration-700'>
+        <main className='bg-white dark:bg-slate-700 w-full h-[36rem] rounded-3xl mt-2 p-7 md:p-14 overflow-hidden overflow-y-auto lg:overflow-y-hidden hover:overflow-y-auto hover:shadow-lg duration-700'>
             <div className='flex gap-4 items-center'>
                 <h1 className={`capitalize font-bold text-4xl flex items-center gap-3 ${luckiest.className}`}>Skills <span className="text-5xl"></span></h1>
                 <hr className="w-[50rem]" />
