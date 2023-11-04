@@ -21,13 +21,13 @@ const Music = () => {
     }
     return (
         <>
-            <main className='bg-white w-full h-[36rem] rounded-3xl mt-2 p-14 overflow-hidden hover:overflow-y-scroll hover:shadow-lg duration-700'>
+            <main className='bg-white dark:bg-slate-700 w-full h-[36rem] rounded-3xl mt-2 p-7 md:p-14 overflow-hidden hover:overflow-y-scroll hover:shadow-lg duration-700'>
                 <div className='flex gap-4 items-center'>
                     <h1 className={`capitalize font-bold text-4xl flex items-center gap-3 ${luckiest.className}`}>My Songs <span className="text-5xl"></span></h1>
                     <hr className="w-[50rem]" />
                 </div>
 
-                <div className="grid grid-cols-3 gap-5 mt-5">
+                <div className="grid lg:grid-cols-3 gap-5 mt-5">
                     <div className="bg-[#FFEBD1] p-5 rounded-xl">
                         <Image className='hover:scale-150 transition duration-500 rounded-lg mb-4' src={'/believe.jpeg'} width={10000} height={2} alt='believe' />
 

@@ -5,14 +5,14 @@ const pacifico = Pacifico({ subsets: ['latin'], weight: ['400'] })
 
 export default function Resume() {
     return (
-        <main className='bg-white w-full h-[36rem] rounded-3xl mt-2 p-14 overflow-hidden hover:overflow-y-scroll hover:shadow-lg duration-700'>
+        <main className='bg-white dark:bg-slate-700 w-full h-[36rem] rounded-3xl mt-2 p-7 md:p-14 overflow-hidden hover:overflow-y-scroll hover:shadow-lg duration-700'>
             <div className='flex gap-4 items-center'>
                 <h1 className={`capitalize font-bold text-4xl flex items-center gap-3 ${luckiest.className}`}>Skills <span className="text-5xl"></span></h1>
                 <hr className="w-[50rem]" />
             </div>
 
-            <div className="grid grid-cols-3 gap-5 mt-5">
-                <div className="bg-[#F2F7FC] p-5 rounded-xl">
+            <div className="grid lg:grid-cols-3 gap-5 mt-5">
+                <div className="bg-[#F2F7FC] dark:bg-slate-900 p-5 rounded-xl">
                     <div className="top mb-1 flex items-center gap-2">
                         <FiPocket size={25} />
                         <h6 className="font-bold text-2xl">JavaScript</h6>
@@ -30,7 +30,7 @@ export default function Resume() {
                     <p className="text-sm">Next.js is an open-source web development framework created by the private company Vercel providing React-based web applications with server-side rendering and static website generation.</p>
                 </div>
 
-                <div className="bg-[#F2F7FC] p-5 rounded-xl">
+                <div className="bg-[#F2F7FC] dark:bg-slate-900 p-5 rounded-xl">
                     <div className="top mb-1 flex items-center gap-2">
                         <FiPocket size={25} />
                         <h6 className="font-bold text-2xl">React Js</h6>
@@ -39,7 +39,7 @@ export default function Resume() {
                     <p className="text-sm">React is a free and open-source front-end JavaScript library for building user interfaces based on components. It is maintained by Meta and a community of individual developers and companies. React can be used to develop single-page, mobile, or server-rendered applications with frameworks like Next.js</p>
                 </div>
 
-                <div className="bg-[#F2F7FC] p-5 rounded-xl">
+                <div className="bg-[#F2F7FC] dark:bg-slate-900 p-5 rounded-xl">
                     <div className="top mb-1 flex items-center gap-2">
                         <FiPocket size={25} />
                         <h6 className="font-bold text-2xl">Tailwind CSS</h6>
@@ -57,7 +57,7 @@ export default function Resume() {
                     <p className="text-sm">Git is a distributed version control system that tracks changes in any set of computer files, usually used for coordinating work among programmers collaboratively developing source code during software development. Its goals include speed, data integrity, and support for distributed, non-linear workflows.</p>
                 </div>
 
-                <div className="bg-[#F2F7FC] p-5 rounded-xl">
+                <div className="bg-[#F2F7FC] dark:bg-slate-900 p-5 rounded-xl">
                     <div className="top mb-1 flex items-center gap-2">
                         <FiPocket size={25} />
                         <h6 className="font-bold text-2xl">Mongo DB</h6>
@@ -75,7 +75,7 @@ export default function Resume() {
                     <p className="text-sm">PHP is a general-purpose scripting language geared towards web development. It was originally created by Danish-Canadian programmer Rasmus Lerdorf in 1993 and released in 1995. The PHP reference implementation is now produced by the PHP Group.</p>
                 </div>
 
-                <div className="bg-[#F2F7FC] p-5 rounded-xl">
+                <div className="bg-[#F2F7FC] dark:bg-slate-900 p-5 rounded-xl">
                     <div className="top mb-1 flex items-center gap-2">
                         <FiPocket size={25} />
                         <h6 className="font-bold text-2xl">MySQLi</h6>

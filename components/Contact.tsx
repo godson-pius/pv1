@@ -26,7 +26,7 @@ const Contact = () => {
     }
 
     return (
-        <main className='bg-white w-full h-[36rem] rounded-3xl mt-2 p-14 overflow-hidden hover:shadow-lg duration-700'>
+        <main className='bg-white dark:bg-slate-700 w-full h-[36rem] rounded-3xl mt-2 p-7 md:p-14 hover:overflow-y-scroll overflow-hidden hover:shadow-lg duration-700'>
 
             { alertState && <Alert message='Message sent successfully' alertState={alertState} setAlertState={setAlertState} /> }
 
@@ -35,27 +35,28 @@ const Contact = () => {
                 <hr className="w-[50rem]" />
             </div>
 
-            <div className="grid grid-cols-2 gap-5 mt-5">
+            <div className="grid lg:grid-cols-2 gap-5 mt-5">
 
-                <div className="bg-[#FFEED9] p-5 flex flex-col justify-center rounded-xl w-full">
+                <div className="bg-[#FFEED9] dark:bg-slate-900 p-5 flex flex-col justify-center rounded-xl w-full">
                     <div className="top mb-1 flex items-center gap-2">
                         <FiPhoneCall className="text-red-500" size={25} />
-                        <h6 className="font-bold text-2xl">Phone:</h6>
+                        <h6 className="font-bold text-md lg:text-2xl">Phone:</h6>
                     </div>
 
                     <p className="text-sm ml-8">+234 814 787 1946</p>
                 </div>
 
-                <div className="bg-[#FFEED9] p-5 flex flex-col justify-center rounded-xl w-full">
+                <div className="bg-[#FFEED9] dark:bg-slate-900 p-5 flex flex-col justify-center rounded-xl w-full">
                     <div className="top mb-1 flex items-center gap-2">
                         <FiMail className="text-red-500" size={25} />
-                        <h6 className="font-bold text-2xl">Email:</h6>
+                        <h6 className="font-bold text-md lg:text-2xl">Email:</h6>
                     </div>
 
                     <p className="text-sm ml-8">godsonazubuike15@gmail.com</p>
                 </div>
+            </div>
 
-                <div className="bg-[#F2F7FC] p-5 flex flex-col justify-center rounded-xl w-full col-span-2">
+            <div className="bg-[#F2F7FC] dark:bg-slate-900 p-5 flex flex-col justify-center rounded-xl w-full col-span-2 my-4">
                     <p className="w-full">I am always open to discussing <b>new projects</b>, opportunities in tech world, <b>partnerships</b> and more so <b>mentorship</b>.</p>
 
                     <form className="mt-5 grid grid-cols-2 gap-3" ref={form} onSubmit={sendEmail}>
@@ -77,8 +78,6 @@ const Contact = () => {
                         <button className="btn btn-warning col-span-2" type="submit">Send message</button>
                     </form>
                 </div>
-
-            </div>
         </main>
     )
 }
