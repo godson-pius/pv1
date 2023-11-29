@@ -8,7 +8,7 @@ export default function About() {
     return (
         <main className='bg-white dark:bg-slate-700 w-full h-[36rem] rounded-3xl mt-2 p-7 md:p-14 overflow-hidden overflow-y-auto lg:overflow-y-hidden hover:overflow-y-auto hover:shadow-lg duration-700'>
             <h1 className={`capitalize font-bold text-4xl flex items-center gap-3 ${luckiest.className}`}>About Me <span className="text-6xl"></span></h1>
-            <p className="mt-4">Welcome to my portfolio! I&apos;m a dynamic MERN-stack developer specializing in React, Next.js, React Native, and IoT. My journey is a fusion of innovation and expertise. Beyond tech skills, I&apos;m a dedicated mentor fostering collaborative learning. Explore how my passion for excellence makes me an ideal fit for your team. Let's shape the future together!</p>
+            <p className="mt-4">Welcome to my portfolio! I&apos;m a dynamic MERN-stack developer specializing in React, Next.js, React Native, and IoT. My journey is a fusion of innovation and expertise. Beyond tech skills, I&apos;m a dedicated mentor fostering collaborative learning. Explore how my passion for excellence makes me an ideal fit for your team. Let&apos;s shape the future together!</p>
 
             <div className="icons flex gap-3 mt-3 lg:hidden">
                 <Link href={'https://web.facebook.com/godson.azubuike.7'} target="_blank" className="bg-[#F2F7FC] dark:bg-slate-300 p-4 rounded-lg">
