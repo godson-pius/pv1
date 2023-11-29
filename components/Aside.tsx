@@ -9,7 +9,7 @@ export default function Aside() {
     return (
         <main className="h-[37rem] bg-white dark:bg-slate-700 w-80 rounded-3xl lg:flex flex-col justify-center items-center px-5 hidden">
             {/* Image */}
-            <div className="pimage w-40 h-40 bg-[#FF9C1A] -mt-32 rounded-2xl" style={{ backgroundImage: 'url(/godson.jpg)', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', backgroundSize: 'cover' }}>
+            <div className="pimage w-40 h-40 bg-[#FF9C1A] -mt-32 rounded-2xl" style={{ backgroundImage: 'url(/1.jpg)', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', backgroundSize: 'cover' }}>
 
             </div>
 

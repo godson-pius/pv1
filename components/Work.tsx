@@ -99,7 +99,7 @@ const Work = () => {
                     <div className="flex justify-between items-center">
                         <div className="top mt-2 flex items-center gap-2 hover:translate-y-1 transition duration-700 hover:-skew-x-6">
                             <FiLink2 size={22} />
-                            <Link href={'https://gentlecrypto.io'} target='_blank' className="font-bold text-lg">Elephant Pack Industries</Link>
+                            <Link href={'https://gentlecrypto.io'} target='_blank' className="font-bold text-lg">Gentle Crypto Enterprise</Link>
                         </div>
 
                         <Link href={'https://github.com/godson-pius/gentlecrypto'} target='_blank'>
