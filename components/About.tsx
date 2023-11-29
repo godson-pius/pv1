@@ -41,9 +41,9 @@ export default function About() {
                         <h6 className="font-bold text-2xl">IOT Expert</h6>
                     </div>
 
-                    <p className="text-sm">As an IoT expert, I specialize in seamlessly integrating devices, enabling automation, and facilitating data-driven decision-making. My proven track record reflects a depth of knowledge in enhancing operational efficiency across diverse industries.</p>
+                    <p className="text-sm">As an IoT expert, I specialize in seamlessly integrating devices, enabling automation, and facilitating data&#8209;driven decision&#8209;making. My proven track record reflects a depth of knowledge in enhancing operational efficiency across diverse industries.</p>
                 </div>
-                
+
                 <div className="bg-[#F2F7FC] dark:bg-slate-900 p-5 rounded-xl">
                     <div className="top mb-1">
                         <FiDroplet />
