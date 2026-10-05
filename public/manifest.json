@@ -1,0 +1,21 @@
+{
+  "name": "Godson Pius — Founder, Full-Stack Developer & Product Builder",
+  "short_name": "Godson Pius",
+  "description": "Founder of Gabvia & Medmask, lead developer at World Brain Technology with 8+ years of experience engineering high-impact tech ventures, edge AI systems, and music.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "icons": [
+    {
+      "src": "/profPic.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/profPic.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

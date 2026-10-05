@@ -1,85 +1,191 @@
 'use client'
 
-import React, { FormEventHandler, useRef, useState } from 'react';
-import emailjs from '@emailjs/browser';
+import { FormEventHandler, useRef, useState } from 'react'
+import Link from 'next/link'
+import emailjs from '@emailjs/browser'
+import { profile } from '@/app/lib/data'
+import Card3D from './Card3D'
 
-import { FiMail, FiPhoneCall, FiPocket } from "react-icons/fi"
-import { Luckiest_Guy, Pacifico } from 'next/font/google'
-import Alert from './Alert';
-const luckiest = Luckiest_Guy({ subsets: ['latin'], weight: ['400'] })
+export default function Contact() {
+  const form = useRef<HTMLFormElement>(null)
+  const [state, setState] = useState<'idle' | 'sending' | 'ok' | 'err'>('idle')
 
-const Contact = () => {
-    const form = useRef<any>();
-    const [alertState, setAlertState] = useState<boolean>(false)
-
-    const sendEmail: FormEventHandler<HTMLFormElement> = (e) => {
-        e.preventDefault();
-
-        emailjs.sendForm('service_w75yzjp', 'template_bathl5q', form.current, 'P2w6wEwYIAeZK8r1g')
-            .then((result) => {
-                setAlertState(true)
-                form.current.reset()
-                window.scrollTo(0, 0)
-            }, (error) => {
-                console.log(error.text);
-            });
-    }
-
-    return (
-        <main className='bg-white dark:bg-slate-700 w-full h-[36rem] rounded-3xl mt-2 p-7 md:p-14 overflow-hidden overflow-y-auto lg:overflow-y-hidden hover:overflow-y-auto hover:shadow-lg duration-700'>
-
-            { alertState && <Alert message='Message sent successfully' alertState={alertState} setAlertState={setAlertState} /> }
-
-            <div className='flex gap-4 items-center'>
-                <h1 className={`capitalize font-bold text-4xl flex items-center gap-3 ${luckiest.className}`}>Contact <span className="text-5xl"></span></h1>
-                <hr className="w-[50rem]" />
-            </div>
-
-            <div className="grid lg:grid-cols-2 gap-5 mt-5">
-
-                <div className="bg-[#FFEED9] dark:bg-slate-900 p-5 flex flex-col justify-center rounded-xl w-full">
-                    <div className="top mb-1 flex items-center gap-2">
-                        <FiPhoneCall className="text-red-500" size={25} />
-                        <h6 className="font-bold text-md lg:text-2xl">Phone:</h6>
-                    </div>
-
-                    <p className="text-sm ml-8">+234 814 787 1946</p>
-                </div>
-
-                <div className="bg-[#FFEED9] dark:bg-slate-900 p-5 flex flex-col justify-center rounded-xl w-full">
-                    <div className="top mb-1 flex items-center gap-2">
-                        <FiMail className="text-red-500" size={25} />
-                        <h6 className="font-bold text-md lg:text-2xl">Email:</h6>
-                    </div>
-
-                    <p className="text-sm ml-8">godsonazubuike15@gmail.com</p>
-                </div>
-            </div>
-
-            <div className="bg-[#F2F7FC] dark:bg-slate-900 p-5 flex flex-col justify-center rounded-xl w-full col-span-2 my-4">
-                    <p className="w-full">I am always open to discussing <b>new projects</b>, opportunities in tech world, <b>partnerships</b> and more so <b>mentorship</b>.</p>
-
-                    <form className="mt-5 grid grid-cols-2 gap-3" ref={form} onSubmit={sendEmail}>
-                        <div className="form-group flex flex-col gap-1">
-                            <label htmlFor="name">Name</label>
-                            <input required type="text" name="user_name" id="name" className="border-2 p-2 rounded-lg focus:border-red-400 outline-none transition duration-500 focus:animate-pulse" />
-                        </div>
-
-                        <div className="form-group flex flex-col gap-1">
-                            <label htmlFor="email">Email</label>
-                            <input required type="email" name="user_email" id="email" className="border-2 p-2 rounded-lg focus:border-red-400 outline-none transition duration-500 focus:animate-pulse" />
-                        </div>
-
-                        <div className="form-group flex flex-col gap-1 col-span-2">
-                            <label htmlFor="message">Message</label>
-                            <input required type="text" name="message" id="message" className="border-2 p-2 rounded-lg focus:border-red-400 outline-none transition duration-500 focus:animate-pulse" />
-                        </div>
-
-                        <button className="btn btn-warning col-span-2" type="submit">Send message</button>
-                    </form>
-                </div>
-        </main>
+  const send: FormEventHandler<HTMLFormElement> = (e) => {
+    e.preventDefault()
+    setState('sending')
+    emailjs.sendForm('service_w75yzjp', 'template_bathl5q', form.current!, 'P2w6wEwYIAeZK8r1g').then(
+      () => {
+        setState('ok')
+        form.current?.reset()
+      },
+      () => setState('err'),
     )
-}
+  }
 
-export default Contact
+  return (
+    <section id="contact" className="py-20 md:py-28 border-t border-white/[0.08] relative">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="max-w-2xl mb-12">
+          <p className="text-xs font-mono text-emerald-400 uppercase tracking-widest">
+            Let’s Build
+          </p>
+          <h2 className="text-3xl sm:text-5xl font-semibold tracking-tight text-white mt-2">
+            Have an idea worth building?
+          </h2>
+          <p className="text-sm sm:text-base text-neutral-400 mt-3 leading-relaxed">
+            Have a problem technology could solve? Looking to collaborate, partner, invest, or simply connect? Reach out below.
+          </p>
+        </div>
+
+        <div className="grid lg:grid-cols-12 gap-8 items-start">
+          {/* Direct Details Card with 3D Depth */}
+          <div className="lg:col-span-5">
+            <Card3D depth={6} className="p-6 sm:p-8 flex flex-col justify-between">
+              <div>
+                <span className="text-xs font-mono text-emerald-400 uppercase tracking-wider block">
+                  Direct Channels
+                </span>
+                <h3 className="text-xl font-semibold text-white mt-2">{profile.name}</h3>
+                <p className="text-xs text-neutral-400 font-mono mt-0.5">
+                  Founder · Full-Stack Developer · Product Builder
+                </p>
+
+                <div className="mt-6 space-y-4 text-sm font-mono">
+                  <div>
+                    <span className="text-xs text-neutral-500 block">Email Address</span>
+                    <a
+                      href={`mailto:${profile.email}`}
+                      className="text-white hover:text-emerald-400 transition-colors break-all"
+                    >
+                      {profile.email}
+                    </a>
+                  </div>
+
+                  <div>
+                    <span className="text-xs text-neutral-500 block">Phone / WhatsApp</span>
+                    <a
+                      href={`tel:${profile.phone.replace(/\s+/g, '')}`}
+                      className="text-white hover:text-emerald-400 transition-colors"
+                    >
+                      {profile.phone}
+                    </a>
+                  </div>
+
+                  <div>
+                    <span className="text-xs text-neutral-500 block">Current Location</span>
+                    <p className="text-neutral-300">{profile.location}</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="mt-8 pt-5 border-t border-white/[0.08]">
+                <span className="text-xs font-mono text-neutral-400 block mb-2">Connect Across Platforms:</span>
+                <div className="flex flex-wrap gap-2">
+                  {profile.socials.map((s) => (
+                    <a
+                      key={s.label}
+                      href={s.href}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="text-xs font-mono px-3 py-1 rounded-full bg-white/[0.04] border border-white/10 text-neutral-300 hover:text-white hover:border-white/20 transition-all"
+                    >
+                      {s.label} ↗
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </Card3D>
+          </div>
+
+          {/* Contact Message Form with 3D Depth */}
+          <div className="lg:col-span-7">
+            <Card3D depth={4} className="p-6 sm:p-8">
+              <h3 className="text-xl font-semibold text-white mb-2">Send a Message</h3>
+              <p className="text-xs text-neutral-400 mb-6 font-mono">
+                Direct inbox delivery via secure messaging service.
+              </p>
+
+              <form ref={form} onSubmit={send} className="space-y-4">
+                <div className="grid sm:grid-cols-2 gap-4">
+                  <div>
+                    <label className="text-xs font-mono text-neutral-400 block mb-1.5">
+                      Your Name
+                    </label>
+                    <input
+                      required
+                      name="user_name"
+                      type="text"
+                      placeholder="e.g. Alex Chen"
+                      autoComplete="name"
+                      className="w-full px-3.5 py-2.5 rounded-xl bg-white/[0.04] border border-white/10 text-sm text-white placeholder-neutral-600 focus:outline-none focus:border-white/30 font-mono"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="text-xs font-mono text-neutral-400 block mb-1.5">
+                      Email Address
+                    </label>
+                    <input
+                      required
+                      name="user_email"
+                      type="email"
+                      placeholder="alex@company.com"
+                      autoComplete="email"
+                      className="w-full px-3.5 py-2.5 rounded-xl bg-white/[0.04] border border-white/10 text-sm text-white placeholder-neutral-600 focus:outline-none focus:border-white/30 font-mono"
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <label className="text-xs font-mono text-neutral-400 block mb-1.5">
+                    Message / Project Brief
+                  </label>
+                  <textarea
+                    required
+                    name="message"
+                    rows={4}
+                    placeholder="Tell me about your product, project, or collaboration..."
+                    className="w-full px-3.5 py-2.5 rounded-xl bg-white/[0.04] border border-white/10 text-sm text-white placeholder-neutral-600 focus:outline-none focus:border-white/30 font-mono"
+                  />
+                </div>
+
+                <button
+                  type="submit"
+                  disabled={state === 'sending'}
+                  className="expo-btn-primary w-full sm:w-auto"
+                >
+                  {state === 'sending' ? 'Transmitting…' : 'Send Message →'}
+                </button>
+
+                <div role="status" className="text-xs font-mono min-h-5 pt-1">
+                  {state === 'ok' && (
+                    <span className="text-emerald-400">
+                      ✓ Message received! I will reply to your email shortly.
+                    </span>
+                  )}
+                  {state === 'err' && (
+                    <span className="text-rose-400">
+                      Notice: Transmission error. Please email godsonazubuike15@gmail.com directly.
+                    </span>
+                  )}
+                </div>
+              </form>
+            </Card3D>
+          </div>
+        </div>
+
+        {/* Exact Footer per User Request */}
+        <footer className="mt-20 pt-8 border-t border-white/[0.08] flex flex-col sm:flex-row items-center justify-between gap-3 text-xs font-mono text-neutral-500">
+          <div>© 2026 Godson Pius · World Brain Technology Limited · Gabvia. Medmask.</div>
+          <Link
+            href="/dashboard"
+            className="hover:text-neutral-300 transition-colors flex items-center gap-1.5 opacity-60 hover:opacity-100"
+          >
+            <span>🔒</span>
+            <span>Dashboard</span>
+          </Link>
+        </footer>
+      </div>
+    </section>
+  )
+}
